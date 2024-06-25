@@ -44,8 +44,7 @@ public class Finders {
    * @return new finder
    */
   public static Finder advancedFinder(String query, String orQuery, String notQuery) {
-    return
-        Finder.contains(query)
+    return Finder.contains(query)
             .or(Finder.contains(orQuery))
             .not(Finder.contains(notQuery));
   }
@@ -63,7 +62,6 @@ public class Finders {
       finder = finder.not(Finder.contains(q));
     }
     return finder;
-
   }
 
   /**

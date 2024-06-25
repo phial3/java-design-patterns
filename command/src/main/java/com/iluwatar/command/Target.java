@@ -59,8 +59,7 @@ public abstract class Target {
    * Changes the visibility of the target.
    */
   public void changeVisibility() {
-    var visible = getVisibility() == Visibility.INVISIBLE
-            ? Visibility.VISIBLE : Visibility.INVISIBLE;
+    var visible = getVisibility() == Visibility.INVISIBLE ? Visibility.VISIBLE : Visibility.INVISIBLE;
     setVisibility(visible);
   }
 }

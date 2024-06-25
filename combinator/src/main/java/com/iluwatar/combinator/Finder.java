@@ -22,6 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package com.iluwatar.combinator;
 
 import java.util.List;
@@ -35,6 +36,7 @@ public interface Finder {
 
   /**
    * The function to find lines in text.
+   *
    * @param text full tet
    * @return result of searching
    */
@@ -42,6 +44,7 @@ public interface Finder {
 
   /**
    * Simple implementation of function {@link #find(String)}.
+   *
    * @param word for searching
    * @return this
    */
@@ -53,6 +56,7 @@ public interface Finder {
 
   /**
    * combinator not.
+   *
    * @param notFinder finder to combine
    * @return new finder including previous finders
    */
@@ -66,6 +70,7 @@ public interface Finder {
 
   /**
    * combinator or.
+   *
    * @param orFinder finder to combine
    * @return new finder including previous finders
    */
@@ -79,16 +84,14 @@ public interface Finder {
 
   /**
    * combinator and.
+   *
    * @param andFinder finder to combine
    * @return new finder including previous finders
    */
   default Finder and(Finder andFinder) {
-    return
-        txt -> this
-            .find(txt)
-            .stream()
-            .flatMap(line -> andFinder.find(line).stream())
-            .collect(Collectors.toList());
+    return txt -> this.find(txt).stream()
+        .flatMap(line -> andFinder.find(line).stream())
+        .collect(Collectors.toList());
   }
 
 }

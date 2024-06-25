@@ -78,7 +78,7 @@ public class App {
       bookRepository.update(bobBook); // Bob tries to save his book to database
     } catch (VersionMismatchException e) {
       // Bob update fails, and book in repository remained untouchable
-      LOGGER.info("Exception: {}", e.getMessage());
+      LOGGER.error("Exception: {}", e.getMessage());
       // Now Bob should reread actual book from repository, do his changes again and save again
     }
   }

@@ -66,7 +66,7 @@ public class ImperativeProgramming {
       }
     }
 
-    Collections.sort(carsSortedByYear, new Comparator<Car>() {
+    carsSortedByYear.sort(new Comparator<Car>() {
       @Override
       public int compare(Car car1, Car car2) {
         return car1.year() - car2.year();

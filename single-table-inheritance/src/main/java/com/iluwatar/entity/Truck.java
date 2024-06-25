@@ -27,6 +27,7 @@ package com.iluwatar.entity;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -37,8 +38,9 @@ import lombok.NoArgsConstructor;
  * @see Vehicle Vehicle
  */
 @Data
-@NoArgsConstructor
 @Entity
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @DiscriminatorValue(value = "TRUCK")
 public class Truck extends TransportVehicle {
 
