@@ -52,7 +52,10 @@ public class Data {
     this.type = type;
   }
 
-  enum DataType {
+  public enum DataType {
+    /**
+     * 定义
+     */
     TYPE_1, TYPE_2, TYPE_3
   }
 

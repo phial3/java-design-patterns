@@ -36,7 +36,6 @@ import java.util.List;
  * purposes of this example it fails in a programmed way depending on the constructor parameters.
  *
  */
-
 public record FindCustomer(String customerId, Deque<BusinessException> errors) implements BusinessOperation<String> {
   public FindCustomer(String customerId, BusinessException... errors) {
     this(customerId, new ArrayDeque<>(List.of(errors)));

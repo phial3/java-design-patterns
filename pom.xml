@@ -200,6 +200,7 @@
         <module>server-session</module>
         <module>virtual-proxy</module>
         <module>function-composition</module>
+        <module>sealed-fundamentals</module>
     </modules>
 
     <repositories>

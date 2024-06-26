@@ -130,6 +130,8 @@ public abstract class AbstractInstance implements Instance, Runnable {
         handleHeartbeatInvokeMessage();
       }
       default -> {
+        LOGGER.error(INSTANCE + localId + " - Unknown Message type: " + message.getType());
+        throw new IllegalArgumentException("Unknown message type: " + message.getType());
       }
     }
   }
